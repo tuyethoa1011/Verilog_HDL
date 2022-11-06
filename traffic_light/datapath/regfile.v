@@ -36,22 +36,3 @@ module regfile(data_in,REA,RAA,REB,RAB,WA,WEn,CLK,outA,outB);
 
 endmodule
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
