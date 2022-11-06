@@ -1,5 +1,3 @@
-
-
 module datapath(sel_input, in_dtpath, REA,REB, WEn,WA,RAA,RAB,clk,gt_2signal,gt_6signal,alu_sel);
 	
 	input sel_input;
