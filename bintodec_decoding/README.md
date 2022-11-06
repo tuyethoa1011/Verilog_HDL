@@ -1,2 +1,2 @@
 
-Using Continuous Assignment coding style
+Using Continuous Assignment coding style only
