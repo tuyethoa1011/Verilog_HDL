@@ -1,0 +1,16 @@
+module morsecode_lengthcounter(enable,load,data_in,q_out);
+	input [3:0] data_in;
+	input enable; //reset
+	input load; //clk
+	output reg [3:0] q_out;
+	
+	always@(posedge load or posedge enable)
+	begin
+		if(enable) q_out <= q_out;
+		else
+		begin
+			q_out <= q_out - 1;
+		end
+	end
+	
+endmodule

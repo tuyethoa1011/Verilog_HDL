@@ -1,0 +1,95 @@
+//FSM
+module FSM(half_sec,reset,light,done,c_datain,s_datain,ctrl_load,ctrl_enable,state);
+	
+	localparam 	reset_state = 4'b0000,
+					s1 = 4'b0001,
+					s2 = 4'b0010,
+					s3 = 4'b0011,
+					s4 = 4'b0100,
+					s5 = 4'b0101,
+					s6 = 4'b0110,
+					s7 = 4'b0111,
+					s8 = 4'b1000,
+					s9 = 4'b1001,
+					s10 = 4'b1010,
+					s11 = 4'b1011;
+	
+	input half_sec; //clk 0.5s
+	output light; //morse_code output led
+	output reg [3:0] state;
+	
+	input [3:0] c_datain; //q_count
+	input s_datain;
+	input reset;
+	
+	output done; //isZero
+	output ctrl_load;
+	output ctrl_enable;
+	
+	//------ state transition -------
+	
+	always@(posedge half_sec or posedge reset)
+	begin
+		if(reset) state <= reset_state;
+		else
+		begin
+			case(state)
+				reset_state: begin
+					if(half_sec==1'b0) state <= reset_state;
+					else state <= s1;
+				end
+				s1: begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s2;
+				end
+				s2:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s3;
+				end
+				s3:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s4;
+				end
+				s4:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s5;
+				end
+				s5:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s6;
+				end
+				s6:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s7;
+				end
+				s7:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s8;
+				end
+				s8:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s9;
+				end
+				s9:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s10;
+				end
+				s10:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s11;
+				end
+				s11:  begin
+					if(c_datain == 1'b0) state <= reset_state;
+					else state <= s12;
+				end
+			default: state <= reset_state;
+			endcase
+		end
+	end
+	
+	//------ logic output state transition ---------
+	
+	
+
+endmodule
+

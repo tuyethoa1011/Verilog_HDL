@@ -1,0 +1,196 @@
+|morse_code
+light <= FSM:U1.light
+letter_in[0] => letter_in[0].IN1
+letter_in[1] => letter_in[1].IN1
+letter_in[2] => letter_in[2].IN1
+half_sec => half_sec.IN2
+length_out[0] <= length_out[0].DB_MAX_OUTPUT_PORT_TYPE
+length_out[1] <= length_out[1].DB_MAX_OUTPUT_PORT_TYPE
+length_out[2] <= length_out[2].DB_MAX_OUTPUT_PORT_TYPE
+length_out[3] <= length_out[3].DB_MAX_OUTPUT_PORT_TYPE
+lsbit_sreg <= lsbit_sreg.DB_MAX_OUTPUT_PORT_TYPE
+state[0] <= FSM:U1.state
+state[1] <= FSM:U1.state
+state[2] <= FSM:U1.state
+state[3] <= FSM:U1.state
+en <= en.DB_MAX_OUTPUT_PORT_TYPE
+start => start.IN1
+reset => reset.IN1
+morsecode_shiftreg[0] <= morsecode_shiftreg[0].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[1] <= morsecode_shiftreg[1].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[2] <= morsecode_shiftreg[2].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[3] <= morsecode_shiftreg[3].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[4] <= morsecode_shiftreg[4].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[5] <= morsecode_shiftreg[5].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[6] <= morsecode_shiftreg[6].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[7] <= morsecode_shiftreg[7].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[8] <= morsecode_shiftreg[8].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[9] <= morsecode_shiftreg[9].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[10] <= morsecode_shiftreg[10].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[11] <= morsecode_shiftreg[11].DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[12] <= morsecode_shiftreg[12].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|morse_code|morsecode_datapath:U0
+enable => enable.IN2
+load => load.IN2
+q_out[0] <= morsecode_lengthcounter:U0.q_out
+q_out[1] <= morsecode_lengthcounter:U0.q_out
+q_out[2] <= morsecode_lengthcounter:U0.q_out
+q_out[3] <= morsecode_lengthcounter:U0.q_out
+shiftreg_out[0] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[1] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[2] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[3] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[4] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[5] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[6] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[7] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[8] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[9] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[10] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[11] <= morsecode_shiftregister:U1.shiftreg_out
+shiftreg_out[12] <= morsecode_shiftregister:U1.shiftreg_out
+letter_in[0] => letter_in[0].IN1
+letter_in[1] => letter_in[1].IN1
+letter_in[2] => letter_in[2].IN1
+lastbitshift <= morsecode_shiftregister:U1.shiftreg_out
+
+
+|morse_code|morsecode_datapath:U0|morsecode_lengthcounter:U0
+enable => q_out[0]~reg0.ALOAD
+enable => q_out[1]~reg0.ALOAD
+enable => q_out[2]~reg0.ALOAD
+enable => q_out[3]~reg0.ALOAD
+load => q_out[0]~reg0.CLK
+load => q_out[1]~reg0.CLK
+load => q_out[2]~reg0.CLK
+load => q_out[3]~reg0.CLK
+data_in[0] => q_out[0]~reg0.ADATA
+data_in[1] => q_out[1]~reg0.ADATA
+data_in[2] => q_out[2]~reg0.ADATA
+data_in[3] => q_out[3]~reg0.ADATA
+q_out[0] <= q_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[1] <= q_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[2] <= q_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q_out[3] <= q_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|morse_code|morsecode_datapath:U0|morsecode_shiftregister:U1
+enable => shiftreg_out[0]~reg0.ALOAD
+enable => shiftreg_out[1]~reg0.ALOAD
+enable => shiftreg_out[2]~reg0.ALOAD
+enable => shiftreg_out[3]~reg0.ALOAD
+enable => shiftreg_out[4]~reg0.ALOAD
+enable => shiftreg_out[5]~reg0.ALOAD
+enable => shiftreg_out[6]~reg0.ALOAD
+enable => shiftreg_out[7]~reg0.ALOAD
+enable => shiftreg_out[8]~reg0.ALOAD
+enable => shiftreg_out[9]~reg0.ALOAD
+enable => shiftreg_out[10]~reg0.ALOAD
+enable => shiftreg_out[11]~reg0.ALOAD
+enable => shiftreg_out[12]~reg0.ALOAD
+load => shiftreg_out[0]~reg0.CLK
+load => shiftreg_out[1]~reg0.CLK
+load => shiftreg_out[2]~reg0.CLK
+load => shiftreg_out[3]~reg0.CLK
+load => shiftreg_out[4]~reg0.CLK
+load => shiftreg_out[5]~reg0.CLK
+load => shiftreg_out[6]~reg0.CLK
+load => shiftreg_out[7]~reg0.CLK
+load => shiftreg_out[8]~reg0.CLK
+load => shiftreg_out[9]~reg0.CLK
+load => shiftreg_out[10]~reg0.CLK
+load => shiftreg_out[11]~reg0.CLK
+load => shiftreg_out[12]~reg0.CLK
+data_in[0] => shiftreg_out[0]~reg0.ADATA
+data_in[1] => shiftreg_out[1]~reg0.ADATA
+data_in[2] => shiftreg_out[2]~reg0.ADATA
+data_in[3] => shiftreg_out[3]~reg0.ADATA
+data_in[4] => shiftreg_out[4]~reg0.ADATA
+data_in[5] => shiftreg_out[5]~reg0.ADATA
+data_in[6] => shiftreg_out[6]~reg0.ADATA
+data_in[7] => shiftreg_out[7]~reg0.ADATA
+data_in[8] => shiftreg_out[8]~reg0.ADATA
+data_in[9] => shiftreg_out[9]~reg0.ADATA
+data_in[10] => shiftreg_out[10]~reg0.ADATA
+data_in[11] => shiftreg_out[11]~reg0.ADATA
+data_in[12] => shiftreg_out[12]~reg0.ADATA
+shiftreg_out[0] <= shiftreg_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[1] <= shiftreg_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[2] <= shiftreg_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[3] <= shiftreg_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[4] <= shiftreg_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[5] <= shiftreg_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[6] <= shiftreg_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[7] <= shiftreg_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[8] <= shiftreg_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[9] <= shiftreg_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[10] <= shiftreg_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[11] <= shiftreg_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+shiftreg_out[12] <= shiftreg_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|morse_code|morsecode_datapath:U0|morsecode_encoder:U2
+letter_in[0] => Decoder0.IN1
+letter_in[0] => Decoder1.IN1
+letter_in[0] => Decoder2.IN2
+letter_in[1] => Decoder0.IN0
+letter_in[1] => Decoder2.IN1
+letter_in[2] => Decoder1.IN0
+letter_in[2] => Decoder2.IN0
+morsecode_length[0] <= <VCC>
+morsecode_length[1] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_length[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_length[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[0] <= <GND>
+morsecode_shiftreg[1] <= <VCC>
+morsecode_shiftreg[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[3] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[4] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[5] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[6] <= morsecode_shiftreg.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[8] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[9] <= morsecode_shiftreg.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[10] <= <GND>
+morsecode_shiftreg[11] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+morsecode_shiftreg[12] <= <GND>
+
+
+|morse_code|FSM:U1
+start => Mux3.IN15
+half_sec => state[0]~reg0.CLK
+half_sec => state[1]~reg0.CLK
+half_sec => state[2]~reg0.CLK
+half_sec => state[3]~reg0.CLK
+reset => state[0]~reg0.ACLR
+reset => state[1]~reg0.ACLR
+reset => state[2]~reg0.ACLR
+reset => state[3]~reg0.ACLR
+light <= light.DB_MAX_OUTPUT_PORT_TYPE
+c_datain[0] => Equal1.IN31
+c_datain[1] => Equal1.IN30
+c_datain[2] => Equal1.IN29
+c_datain[3] => Equal1.IN28
+s_datain[0] => Equal0.IN31
+s_datain[1] => Equal0.IN30
+s_datain[2] => Equal0.IN29
+s_datain[3] => Equal0.IN28
+s_datain[4] => Equal0.IN27
+s_datain[5] => Equal0.IN26
+s_datain[6] => Equal0.IN25
+s_datain[7] => Equal0.IN24
+s_datain[8] => Equal0.IN23
+s_datain[9] => Equal0.IN22
+s_datain[10] => Equal0.IN21
+s_datain[11] => Equal0.IN20
+s_datain[12] => Equal0.IN19
+ctrl_enable <= ctrl_enable$latch.DB_MAX_OUTPUT_PORT_TYPE
+state[0] <= state[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[1] <= state[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[2] <= state[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+state[3] <= state[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+lastbit => light.DATAA
+
+

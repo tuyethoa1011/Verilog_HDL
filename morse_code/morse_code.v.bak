@@ -1,0 +1,17 @@
+
+//Morse code FSM
+
+//ENCODING letter in to BINARY
+// A : 000
+// B: 001
+// C: 010
+//D: 011
+//E: 100
+//F: 101
+//G: 110
+//H: 111
+module morse_code();
+	input data_in[2:0]; //alphabet letter
+
+
+endmodule

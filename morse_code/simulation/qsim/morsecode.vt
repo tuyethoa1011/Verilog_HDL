@@ -1,0 +1,714 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "12/09/2022 13:35:52"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    morse_code
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module morse_code_vlg_sample_tst(
+	half_sec,
+	letter_in,
+	reset,
+	start,
+	sampler_tx
+);
+input  half_sec;
+input [2:0] letter_in;
+input  reset;
+input  start;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(half_sec or letter_in or reset or start)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module morse_code_vlg_check_tst (
+	en,
+	length_out,
+	light,
+	lsbit_sreg,
+	morsecode_shiftreg,
+	state,
+	sampler_rx
+);
+input  en;
+input [3:0] length_out;
+input  light;
+input  lsbit_sreg;
+input [12:0] morsecode_shiftreg;
+input [3:0] state;
+input sampler_rx;
+
+reg  en_expected;
+reg [3:0] length_out_expected;
+reg  light_expected;
+reg  lsbit_sreg_expected;
+reg [12:0] morsecode_shiftreg_expected;
+reg [3:0] state_expected;
+
+reg  en_prev;
+reg [3:0] length_out_prev;
+reg  light_prev;
+reg  lsbit_sreg_prev;
+reg [12:0] morsecode_shiftreg_prev;
+reg [3:0] state_prev;
+
+reg  en_expected_prev;
+reg [3:0] length_out_expected_prev;
+reg  light_expected_prev;
+reg  lsbit_sreg_expected_prev;
+reg [12:0] morsecode_shiftreg_expected_prev;
+reg [3:0] state_expected_prev;
+
+reg  last_en_exp;
+reg [3:0] last_length_out_exp;
+reg  last_light_exp;
+reg  last_lsbit_sreg_exp;
+reg [12:0] last_morsecode_shiftreg_exp;
+reg [3:0] last_state_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:6] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 6'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	en_prev = en;
+	length_out_prev = length_out;
+	light_prev = light;
+	lsbit_sreg_prev = lsbit_sreg;
+	morsecode_shiftreg_prev = morsecode_shiftreg;
+	state_prev = state;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	en_expected_prev = en_expected;
+	length_out_expected_prev = length_out_expected;
+	light_expected_prev = light_expected;
+	lsbit_sreg_expected_prev = lsbit_sreg_expected;
+	morsecode_shiftreg_expected_prev = morsecode_shiftreg_expected;
+	state_expected_prev = state_expected;
+end
+
+
+
+// expected en
+initial
+begin
+	en_expected = 1'bX;
+end 
+// expected length_out[ 3 ]
+initial
+begin
+	length_out_expected[3] = 1'bX;
+end 
+// expected length_out[ 2 ]
+initial
+begin
+	length_out_expected[2] = 1'bX;
+end 
+// expected length_out[ 1 ]
+initial
+begin
+	length_out_expected[1] = 1'bX;
+end 
+// expected length_out[ 0 ]
+initial
+begin
+	length_out_expected[0] = 1'bX;
+end 
+
+// expected light
+initial
+begin
+	light_expected = 1'bX;
+end 
+
+// expected lsbit_sreg
+initial
+begin
+	lsbit_sreg_expected = 1'bX;
+end 
+// expected morsecode_shiftreg[ 12 ]
+initial
+begin
+	morsecode_shiftreg_expected[12] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 11 ]
+initial
+begin
+	morsecode_shiftreg_expected[11] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 10 ]
+initial
+begin
+	morsecode_shiftreg_expected[10] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 9 ]
+initial
+begin
+	morsecode_shiftreg_expected[9] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 8 ]
+initial
+begin
+	morsecode_shiftreg_expected[8] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 7 ]
+initial
+begin
+	morsecode_shiftreg_expected[7] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 6 ]
+initial
+begin
+	morsecode_shiftreg_expected[6] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 5 ]
+initial
+begin
+	morsecode_shiftreg_expected[5] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 4 ]
+initial
+begin
+	morsecode_shiftreg_expected[4] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 3 ]
+initial
+begin
+	morsecode_shiftreg_expected[3] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 2 ]
+initial
+begin
+	morsecode_shiftreg_expected[2] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 1 ]
+initial
+begin
+	morsecode_shiftreg_expected[1] = 1'bX;
+end 
+// expected morsecode_shiftreg[ 0 ]
+initial
+begin
+	morsecode_shiftreg_expected[0] = 1'bX;
+end 
+// expected state[ 3 ]
+initial
+begin
+	state_expected[3] = 1'bX;
+end 
+// expected state[ 2 ]
+initial
+begin
+	state_expected[2] = 1'bX;
+end 
+// expected state[ 1 ]
+initial
+begin
+	state_expected[1] = 1'bX;
+end 
+// expected state[ 0 ]
+initial
+begin
+	state_expected[0] = 1'bX;
+end 
+// generate trigger
+always @(en_expected or en or length_out_expected or length_out or light_expected or light or lsbit_sreg_expected or lsbit_sreg or morsecode_shiftreg_expected or morsecode_shiftreg or state_expected or state)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected en = %b | expected length_out = %b | expected light = %b | expected lsbit_sreg = %b | expected morsecode_shiftreg = %b | expected state = %b | ",en_expected_prev,length_out_expected_prev,light_expected_prev,lsbit_sreg_expected_prev,morsecode_shiftreg_expected_prev,state_expected_prev);
+	$display("| real en = %b | real length_out = %b | real light = %b | real lsbit_sreg = %b | real morsecode_shiftreg = %b | real state = %b | ",en_prev,length_out_prev,light_prev,lsbit_sreg_prev,morsecode_shiftreg_prev,state_prev);
+`endif
+	if (
+		( en_expected_prev !== 1'bx ) && ( en_prev !== en_expected_prev )
+		&& ((en_expected_prev !== last_en_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port en :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", en_expected_prev);
+		$display ("     Real value = %b", en_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_en_exp = en_expected_prev;
+	end
+	if (
+		( length_out_expected_prev[0] !== 1'bx ) && ( length_out_prev[0] !== length_out_expected_prev[0] )
+		&& ((length_out_expected_prev[0] !== last_length_out_exp[0]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port length_out[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", length_out_expected_prev);
+		$display ("     Real value = %b", length_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_length_out_exp[0] = length_out_expected_prev[0];
+	end
+	if (
+		( length_out_expected_prev[1] !== 1'bx ) && ( length_out_prev[1] !== length_out_expected_prev[1] )
+		&& ((length_out_expected_prev[1] !== last_length_out_exp[1]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port length_out[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", length_out_expected_prev);
+		$display ("     Real value = %b", length_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_length_out_exp[1] = length_out_expected_prev[1];
+	end
+	if (
+		( length_out_expected_prev[2] !== 1'bx ) && ( length_out_prev[2] !== length_out_expected_prev[2] )
+		&& ((length_out_expected_prev[2] !== last_length_out_exp[2]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port length_out[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", length_out_expected_prev);
+		$display ("     Real value = %b", length_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_length_out_exp[2] = length_out_expected_prev[2];
+	end
+	if (
+		( length_out_expected_prev[3] !== 1'bx ) && ( length_out_prev[3] !== length_out_expected_prev[3] )
+		&& ((length_out_expected_prev[3] !== last_length_out_exp[3]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port length_out[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", length_out_expected_prev);
+		$display ("     Real value = %b", length_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_length_out_exp[3] = length_out_expected_prev[3];
+	end
+	if (
+		( light_expected_prev !== 1'bx ) && ( light_prev !== light_expected_prev )
+		&& ((light_expected_prev !== last_light_exp) ||
+			on_first_change[3])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port light :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", light_expected_prev);
+		$display ("     Real value = %b", light_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[3] = 1'b0;
+		last_light_exp = light_expected_prev;
+	end
+	if (
+		( lsbit_sreg_expected_prev !== 1'bx ) && ( lsbit_sreg_prev !== lsbit_sreg_expected_prev )
+		&& ((lsbit_sreg_expected_prev !== last_lsbit_sreg_exp) ||
+			on_first_change[4])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port lsbit_sreg :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", lsbit_sreg_expected_prev);
+		$display ("     Real value = %b", lsbit_sreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[4] = 1'b0;
+		last_lsbit_sreg_exp = lsbit_sreg_expected_prev;
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[0] !== 1'bx ) && ( morsecode_shiftreg_prev[0] !== morsecode_shiftreg_expected_prev[0] )
+		&& ((morsecode_shiftreg_expected_prev[0] !== last_morsecode_shiftreg_exp[0]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[0] = morsecode_shiftreg_expected_prev[0];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[1] !== 1'bx ) && ( morsecode_shiftreg_prev[1] !== morsecode_shiftreg_expected_prev[1] )
+		&& ((morsecode_shiftreg_expected_prev[1] !== last_morsecode_shiftreg_exp[1]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[1] = morsecode_shiftreg_expected_prev[1];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[2] !== 1'bx ) && ( morsecode_shiftreg_prev[2] !== morsecode_shiftreg_expected_prev[2] )
+		&& ((morsecode_shiftreg_expected_prev[2] !== last_morsecode_shiftreg_exp[2]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[2] = morsecode_shiftreg_expected_prev[2];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[3] !== 1'bx ) && ( morsecode_shiftreg_prev[3] !== morsecode_shiftreg_expected_prev[3] )
+		&& ((morsecode_shiftreg_expected_prev[3] !== last_morsecode_shiftreg_exp[3]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[3] = morsecode_shiftreg_expected_prev[3];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[4] !== 1'bx ) && ( morsecode_shiftreg_prev[4] !== morsecode_shiftreg_expected_prev[4] )
+		&& ((morsecode_shiftreg_expected_prev[4] !== last_morsecode_shiftreg_exp[4]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[4] = morsecode_shiftreg_expected_prev[4];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[5] !== 1'bx ) && ( morsecode_shiftreg_prev[5] !== morsecode_shiftreg_expected_prev[5] )
+		&& ((morsecode_shiftreg_expected_prev[5] !== last_morsecode_shiftreg_exp[5]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[5] = morsecode_shiftreg_expected_prev[5];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[6] !== 1'bx ) && ( morsecode_shiftreg_prev[6] !== morsecode_shiftreg_expected_prev[6] )
+		&& ((morsecode_shiftreg_expected_prev[6] !== last_morsecode_shiftreg_exp[6]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[6] = morsecode_shiftreg_expected_prev[6];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[7] !== 1'bx ) && ( morsecode_shiftreg_prev[7] !== morsecode_shiftreg_expected_prev[7] )
+		&& ((morsecode_shiftreg_expected_prev[7] !== last_morsecode_shiftreg_exp[7]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[7] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[7] = morsecode_shiftreg_expected_prev[7];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[8] !== 1'bx ) && ( morsecode_shiftreg_prev[8] !== morsecode_shiftreg_expected_prev[8] )
+		&& ((morsecode_shiftreg_expected_prev[8] !== last_morsecode_shiftreg_exp[8]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[8] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[8] = morsecode_shiftreg_expected_prev[8];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[9] !== 1'bx ) && ( morsecode_shiftreg_prev[9] !== morsecode_shiftreg_expected_prev[9] )
+		&& ((morsecode_shiftreg_expected_prev[9] !== last_morsecode_shiftreg_exp[9]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[9] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[9] = morsecode_shiftreg_expected_prev[9];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[10] !== 1'bx ) && ( morsecode_shiftreg_prev[10] !== morsecode_shiftreg_expected_prev[10] )
+		&& ((morsecode_shiftreg_expected_prev[10] !== last_morsecode_shiftreg_exp[10]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[10] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[10] = morsecode_shiftreg_expected_prev[10];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[11] !== 1'bx ) && ( morsecode_shiftreg_prev[11] !== morsecode_shiftreg_expected_prev[11] )
+		&& ((morsecode_shiftreg_expected_prev[11] !== last_morsecode_shiftreg_exp[11]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[11] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[11] = morsecode_shiftreg_expected_prev[11];
+	end
+	if (
+		( morsecode_shiftreg_expected_prev[12] !== 1'bx ) && ( morsecode_shiftreg_prev[12] !== morsecode_shiftreg_expected_prev[12] )
+		&& ((morsecode_shiftreg_expected_prev[12] !== last_morsecode_shiftreg_exp[12]) ||
+			on_first_change[5])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port morsecode_shiftreg[12] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", morsecode_shiftreg_expected_prev);
+		$display ("     Real value = %b", morsecode_shiftreg_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[5] = 1'b0;
+		last_morsecode_shiftreg_exp[12] = morsecode_shiftreg_expected_prev[12];
+	end
+	if (
+		( state_expected_prev[0] !== 1'bx ) && ( state_prev[0] !== state_expected_prev[0] )
+		&& ((state_expected_prev[0] !== last_state_exp[0]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port state[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", state_expected_prev);
+		$display ("     Real value = %b", state_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_state_exp[0] = state_expected_prev[0];
+	end
+	if (
+		( state_expected_prev[1] !== 1'bx ) && ( state_prev[1] !== state_expected_prev[1] )
+		&& ((state_expected_prev[1] !== last_state_exp[1]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port state[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", state_expected_prev);
+		$display ("     Real value = %b", state_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_state_exp[1] = state_expected_prev[1];
+	end
+	if (
+		( state_expected_prev[2] !== 1'bx ) && ( state_prev[2] !== state_expected_prev[2] )
+		&& ((state_expected_prev[2] !== last_state_exp[2]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port state[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", state_expected_prev);
+		$display ("     Real value = %b", state_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_state_exp[2] = state_expected_prev[2];
+	end
+	if (
+		( state_expected_prev[3] !== 1'bx ) && ( state_prev[3] !== state_expected_prev[3] )
+		&& ((state_expected_prev[3] !== last_state_exp[3]) ||
+			on_first_change[6])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port state[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", state_expected_prev);
+		$display ("     Real value = %b", state_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[6] = 1'b0;
+		last_state_exp[3] = state_expected_prev[3];
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module morse_code_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg half_sec;
+reg [2:0] letter_in;
+reg reset;
+reg start;
+// wires                                               
+wire en;
+wire [3:0] length_out;
+wire light;
+wire lsbit_sreg;
+wire [12:0] morsecode_shiftreg;
+wire [3:0] state;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+morse_code i1 (
+// port map - connection between master ports and signals/registers   
+	.en(en),
+	.half_sec(half_sec),
+	.length_out(length_out),
+	.letter_in(letter_in),
+	.light(light),
+	.lsbit_sreg(lsbit_sreg),
+	.morsecode_shiftreg(morsecode_shiftreg),
+	.reset(reset),
+	.start(start),
+	.state(state)
+);
+
+// half_sec
+always
+begin
+	half_sec = 1'b0;
+	half_sec = #10000 1'b1;
+	#10000;
+end 
+// letter_in[ 2 ]
+initial
+begin
+	letter_in[2] = 1'b1;
+	letter_in[2] = #170000 1'b0;
+	letter_in[2] = #200000 1'b1;
+	letter_in[2] = #530000 1'b0;
+end 
+// letter_in[ 1 ]
+initial
+begin
+	letter_in[1] = 1'b1;
+	letter_in[1] = #170000 1'b0;
+	letter_in[1] = #150000 1'b1;
+	letter_in[1] = #50000 1'b0;
+	letter_in[1] = #290000 1'b1;
+	letter_in[1] = #240000 1'b0;
+end 
+// letter_in[ 0 ]
+initial
+begin
+	letter_in[0] = 1'b0;
+	letter_in[0] = #170000 1'b1;
+	letter_in[0] = #200000 1'b0;
+	letter_in[0] = #140000 1'b1;
+	letter_in[0] = #300000 1'b0;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+	reset = #30000 1'b0;
+end 
+
+// start
+always
+begin
+	start = 1'b0;
+	start = #20000 1'b1;
+	#20000;
+end 
+
+morse_code_vlg_sample_tst tb_sample (
+	.half_sec(half_sec),
+	.letter_in(letter_in),
+	.reset(reset),
+	.start(start),
+	.sampler_tx(sampler)
+);
+
+morse_code_vlg_check_tst tb_out(
+	.en(en),
+	.length_out(length_out),
+	.light(light),
+	.lsbit_sreg(lsbit_sreg),
+	.morsecode_shiftreg(morsecode_shiftreg),
+	.state(state),
+	.sampler_rx(sampler)
+);
+endmodule
+

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Dec 09 13:40:53 2022
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : morsecode
+Top-level Entity Name : morse_code
+Family : Cyclone II
+Total logic elements : 71
+    Total combinational functions : 71
+    Dedicated logic registers : 20
+Total registers : 20
+Total pins : 30
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,19 @@
+
+module morsecode_shiftregister(enable,load,data_in,reset, shiftreg_out);
+	input [10:0] data_in;
+	
+	input enable; //data input enable 
+	input load; //clk shift = 0 giu nguyen gia tri 1 thi shift right
+	
+	output [11:0] shiftreg_out; //chung ta chi lay bit shiftreg_out[0] khi ghep cac module lai voi nhau
+	
+	always@(posedge load or posedge enable or posedge reset)
+	begin
+		if(reset) shiftreg_out <= 0;
+		else if(enable) shiftreg_out <= data_in;
+		else begin
+			shiftreg_out <= {1'b0,shiftreg_out[10:1]};
+		end
+	end
+endmodule
+

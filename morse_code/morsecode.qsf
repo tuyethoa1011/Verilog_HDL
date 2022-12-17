@@ -1,0 +1,199 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# Date created = 11:08:19  November 09, 2022
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		morsecode_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY morse_code
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:08:19  NOVEMBER 09, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE morsecode_shiftregister.v
+set_global_assignment -name VERILOG_FILE morsecode_lengthcounter.v
+set_global_assignment -name VERILOG_FILE morsecode_encoder.v
+set_global_assignment -name VERILOG_FILE FSM.v
+set_global_assignment -name VERILOG_FILE morse_code.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform3.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform4.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform5.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform6.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform7.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform8.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform9.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform10.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform11.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform12.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform13.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform14.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform15.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform16.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform17.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform18.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform19.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform20.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform21.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform22.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform23.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform24.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform25.vwf
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform26.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform27.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform28.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform29.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform30.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform31.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform32.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform33.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform34.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform35.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform36.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform37.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform38.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform39.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform40.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform41.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform42.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform43.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform44.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform45.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform46.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform47.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform48.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform49.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform50.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform51.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform52.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform53.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform54.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform55.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform56.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform57.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform58.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform59.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform60.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform61.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform62.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform63.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform64.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform65.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform66.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform67.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform68.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform69.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform70.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform71.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform72.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform73.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform74.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform75.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform76.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform77.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform78.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform79.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform80.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform81.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform82.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform83.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform84.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform85.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform86.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform87.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform88.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform89.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform90.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform91.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform92.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform93.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform94.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform95.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform96.vwf
+set_global_assignment -name VERILOG_FILE test.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform97.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform98.vwf
+set_global_assignment -name VERILOG_FILE morsecode_datapath.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform99.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform100.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform101.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform102.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform103.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform104.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform105.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform106.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform107.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform108.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform109.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform110.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform111.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform112.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform113.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform114.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform115.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform116.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform117.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform118.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform119.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform120.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform121.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform122.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform123.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform124.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform125.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform126.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform127.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform128.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "E:/Hoc tap/HK1 Thirdyear (2022-2023)/TKHTS-HDL-CE213/PROJECTS/Report_LABS/06-FINITE_STATE_MACHINE_LAB4/morse_code/Waveform128.vwf"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
